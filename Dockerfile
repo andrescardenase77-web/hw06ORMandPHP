@@ -1,38 +1,34 @@
 # Usamos una imagen oficial de PHP con Apache
 FROM php:8.2-apache
 
-# 1. Instalar dependencias del sistema necesarias para PostgreSQL
+# 1. Instalar dependencias del sistema y el driver de PostgreSQL
+# libpq-dev es necesario para que PHP pueda comunicarse con Supabase
 RUN apt-get update && apt-get install -y \
     libpq-dev \
     unzip \
     git \
+    && docker-php-ext-install pdo_pgsql \
     && rm -rf /var/lib/apt/lists/*
 
-# 2. Instalar y habilitar la extensión pdo_pgsql que usa tu connection.php
-RUN docker-php-ext-install pdo_pgsql
-
-# 3. Habilitar el módulo rewrite de Apache (por si usas rutas amigables)
+# 2. Habilitar el módulo rewrite de Apache
 RUN a2enmod rewrite
 
-# 4. Instalar Composer globalmente en el contenedor
+# 3. Instalar Composer directamente desde su imagen oficial
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-# 5. Establecer el directorio de trabajo
+# 4. Configurar el directorio de trabajo
 WORKDIR /var/www/html
 
-# 6. Copiar los archivos de configuración de dependencias primero
+# 5. Copiar archivos de dependencias y ejecutar instalación
+# Usamos --no-dev para un entorno de producción más ligero
 COPY composer.json composer.lock ./
+RUN composer install --no-interaction --no-dev --optimize-autoloader
 
-# Cambia la línea 7 de tu Dockerfile por esta:
-RUN composer install --no-interaction --optimize-autoloader --no-dev && composer dump-autoload -o
-
-# 8. Copiar el resto del código del proyecto
+# 6. Copiar el resto del código del proyecto
 COPY . .
 
-# 9. Ajustar permisos para que Apache pueda leer los archivos
+# 7. Ajustar permisos para que el servidor web pueda leer los archivos
 RUN chown -R www-data:www-data /var/www/html
 
-# 10. Exponer el puerto 80
+# 8. Render usa el puerto 80 por defecto para servicios web
 EXPOSE 80
-
-# El comando por defecto ya arranca Apache, así que no necesitamos CMD
