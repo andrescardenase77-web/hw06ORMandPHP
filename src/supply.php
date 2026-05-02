@@ -1,6 +1,4 @@
 <?php
-namespace Andres\Hw06orMandPhp;
-
 use Illuminate\Database\Eloquent\Model;
 
 class Supply extends Model {

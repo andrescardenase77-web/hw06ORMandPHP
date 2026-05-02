@@ -1,10 +1,5 @@
 {
     "name": "andres/hw06or-mand-php",
-    "autoload": {
-        "psr-4": {
-            "Andres\\Hw06orMandPhp\\": "src/"
-        }
-    },
     "require": {
         "php": ">=8.1",
         "ext-pdo_pgsql": "*",

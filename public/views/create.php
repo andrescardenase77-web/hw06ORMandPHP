@@ -1,8 +1,7 @@
 <?php
 require_once '../../vendor/autoload.php';
 require_once '../../connection.php';
-
-use Andres\Hw06orMandPhp\Supply;
+require_once '../../src/supply.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $supply = new Supply();
