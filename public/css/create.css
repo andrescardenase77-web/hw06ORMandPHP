@@ -1,0 +1,86 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f4f8;
+    color: #334e68;
+    margin: 0;
+    padding-bottom: 40px;
+}
+
+header h1 {
+    color: #102a43;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.nav-pills .nav-link {
+    color: #243b53;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.nav-pills .nav-link.active {
+    background-color: #102a43 !important;
+    box-shadow: 0 4px 6px rgba(16, 42, 67, 0.2);
+}
+
+.nav-pills .nav-link:not(.active):hover {
+    background-color: #d9e2ec;
+    color: #102a43;
+}
+
+/* Estilos específicos del Formulario */
+.form-container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    border: 1px solid #d9e2ec;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.form-label {
+    font-weight: 600;
+    color: #243b53;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.form-control, .form-select {
+    border: 1px solid #d9e2ec;
+    padding: 10px;
+    color: #334e68;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #102a43;
+    box-shadow: 0 0 0 0.25rem rgba(16, 42, 67, 0.1);
+}
+
+.btn-submit {
+    background-color: #102a43;
+    color: #ffffff;
+    font-weight: 600;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #243b53;
+    color: #ffffff;
+    box-shadow: 0 4px 6px rgba(16, 42, 67, 0.2);
+}
+
+footer {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #627d98;
+}
+
+footer p {
+    font-style: italic;
+    border-top: 1px solid #d9e2ec;
+    display: inline-block;
+    padding-top: 10px;
+}

@@ -1,0 +1,68 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f4f8;
+    color: #334e68;
+    margin: 0;
+    padding-bottom: 40px;
+}
+
+header h1 {
+    color: #102a43;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.nav-pills .nav-link {
+    color: #243b53;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.nav-pills .nav-link.active {
+    background-color: #102a43 !important;
+    box-shadow: 0 4px 6px rgba(16, 42, 67, 0.2);
+}
+
+.delete-container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    border: 2px solid #f8d7da;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.record-details p {
+    margin-bottom: 8px;
+    color: #243b53;
+    border-bottom: 1px solid #d9e2ec;
+    padding-bottom: 5px;
+}
+
+.btn-delete {
+    background-color: #dc3545;
+    color: #ffffff;
+    font-weight: 600;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-delete:hover {
+    background-color: #a71d2a;
+    color: #ffffff;
+    box-shadow: 0 4px 6px rgba(167, 29, 42, 0.3);
+}
+
+footer {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #627d98;
+}
+
+footer p {
+    font-style: italic;
+    border-top: 1px solid #d9e2ec;
+    display: inline-block;
+    padding-top: 10px;
+}
