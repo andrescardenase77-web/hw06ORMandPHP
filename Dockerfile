@@ -23,8 +23,8 @@ WORKDIR /var/www/html
 # 6. Copiar los archivos de configuración de dependencias primero
 COPY composer.json composer.lock ./
 
-# 7. Instalar las dependencias de PHP (Eloquent, etc.)
-RUN composer install --no-interaction --optimize-autoloader --no-dev
+# Cambia la línea 7 de tu Dockerfile por esta:
+RUN composer install --no-interaction --optimize-autoloader --no-dev && composer dump-autoload -o
 
 # 8. Copiar el resto del código del proyecto
 COPY . .
