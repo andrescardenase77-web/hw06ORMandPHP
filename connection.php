@@ -7,9 +7,9 @@ $capsule = new Capsule;
 
 $capsule->addConnection([
     'driver'    => 'pgsql',
-    'host'      => 'db.ukxilwyncxikljjzeehg.supabase.co',
+    'host'      => 'aws-1-us-east-1.pooler.supabase.com',
     'database'  => 'postgres',
-    'username'  => 'postgres',
+    'username'  => 'postgres.ukxilwyncxikljjzeehg',
     'password'  => 'NX?y4C+9*4n',
     'port'      => '5432',
     'charset'   => 'utf8',
